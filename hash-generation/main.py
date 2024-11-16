@@ -19,7 +19,6 @@ class CardHash:
                 "Please set this environment variable with a secure secret key before using this system."
             )
 
-    # Rest of the class remains the same
     @classmethod
     def generate_hash(cls,
                       member_id: str,
@@ -67,7 +66,6 @@ class SecurityError(Exception):
 
 
 def main():
-    # Example card data
     card = {
         "member_id": "0x-0000 0000 0000 0001",
         "full_name": "Example Member",
@@ -78,7 +76,6 @@ def main():
     }
 
     try:
-        # Generate and verify hash silently
         hash_value = CardHash.generate_hash(
             card['member_id'],
             card['full_name'],
@@ -88,7 +85,6 @@ def main():
             card['date']
         )
 
-        # Only print the hash
         print(hash_value)
 
     except SecurityError as e:
